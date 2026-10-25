@@ -5,7 +5,6 @@ import { Testconfig } from "../test.config"
 
 test("hopmepage", async ({page})=>
 {
-
     const homepage = new Homepage(page);
     const testconfig = new Testconfig();
 
@@ -15,6 +14,5 @@ test("hopmepage", async ({page})=>
     await homepage.Registerlink();
     await homepage.Myaccountlink();
     await homepage.LoginLink();
-
 })
 
