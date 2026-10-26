@@ -115,7 +115,7 @@ export class Registerpage
         await this.confirmationemailmessagemethod();
     }
 
-     async accountregistration()
+     async accountregistrationadmin()
     {
         await this.firstnamemethod(Testconfig.firstname);
         await this.lastnamemethod(Testconfig.lastname);

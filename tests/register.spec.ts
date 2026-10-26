@@ -34,5 +34,5 @@ test.skip("Account register method 2", async ({page})=>
         await homepage.Registerlink();
 
      
-        await registerpage.accountregistration();
+        await registerpage.accountregistrationadmin();
 })
