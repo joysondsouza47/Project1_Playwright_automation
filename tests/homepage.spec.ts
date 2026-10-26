@@ -6,9 +6,9 @@ import { Testconfig } from "../test.config"
 test("hopmepage", async ({page})=>
 {
     const homepage = new Homepage(page);
-    const testconfig = new Testconfig();
 
-    await page.goto(testconfig.appurl)
+
+    await page.goto(Testconfig.appurl);
     expect(await homepage.homepage()).toBeTruthy();
     await homepage.Myaccountlink();
     await homepage.Registerlink();
