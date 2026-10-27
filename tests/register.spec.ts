@@ -21,8 +21,6 @@ test("Account register method 1", async ({page})=>
         //homepage access
         await homepage.Myaccountlink();
         await homepage.Registerlink();
- 
-
         await registerpage.accountregistrationrandom();
 })
 
@@ -36,3 +34,6 @@ test.skip("Account register method 2", async ({page})=>
      
         await registerpage.accountregistrationadmin();
 })
+
+
+//

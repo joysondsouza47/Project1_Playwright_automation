@@ -9,6 +9,4 @@ export class Testconfig
     static telephone = "9945636877";
     static password = "joyson1234"
     
-
-
 }

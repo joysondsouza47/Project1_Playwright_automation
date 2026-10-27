@@ -70,7 +70,7 @@ export class Registerpage
     {
         await this.continuelocator.click();
     }
-    async confirmationmessagemethod()
+async confirmationmessagemethod()
     {
        console.log(await this.confirmationmessagelocator.innerText());
        expect(await this.confirmationmessagelocator.innerText()).toContain("Your Account Has Been Created!");
@@ -82,23 +82,29 @@ export class Registerpage
         expect(await this.confirmationemailmessagelocator.innerText()).toContain("A confirmation has been sent to the provided e-mail address.");
     }
 
-    async accountpageerrormethod()
+
+async accountpageerrormethod()
     {
         try
         {
             await this.confirmationmessagelocator.innerText();
             console.log("Account is registered successfully!");
+            new Error("Account is not registered due to some error!")
             
         }
         catch (error) 
         {
-         console.log("Registration action failed:", error);
-        throw error;
+            if(error instanceof Error)
+            {
+               console.log("failed:", error.message);
+               throw error;
+            }
+         
         }
         
    } 
 
-    async accountregistrationrandom()
+async accountregistrationrandom()
     {
         await this.firstnamemethod(Randomdatagenerator.getRandomFirstName());
         await this.lastnamemethod(Randomdatagenerator.getRandomLastName());
@@ -115,7 +121,7 @@ export class Registerpage
         await this.confirmationemailmessagemethod();
     }
 
-     async accountregistrationadmin()
+async accountregistrationadmin()
     {
         await this.firstnamemethod(Testconfig.firstname);
         await this.lastnamemethod(Testconfig.lastname);
@@ -132,3 +138,4 @@ export class Registerpage
         await this.confirmationemailmessagemethod();
     }
 }
+
