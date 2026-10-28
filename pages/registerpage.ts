@@ -1,4 +1,4 @@
-import{Locator, Page, expect} from "@playwright/test"
+import{Locator, Page} from "@playwright/test"
 import { Randomdatagenerator } from "../utils/randomdatagenerator.spec";
 import { Testconfig } from "../test.config";
 
@@ -70,16 +70,14 @@ export class Registerpage
     {
         await this.continuelocator.click();
     }
-async confirmationmessagemethod()
+    async confirmationmessagemethod()
     {
-       console.log(await this.confirmationmessagelocator.innerText());
-       expect(await this.confirmationmessagelocator.innerText()).toContain("Your Account Has Been Created!");
+       return await this.confirmationmessagelocator.innerText();
     }
 
     async confirmationemailmessagemethod()
     {
-        console.log(await this.confirmationemailmessagelocator.innerText());
-        expect(await this.confirmationemailmessagelocator.innerText()).toContain("A confirmation has been sent to the provided e-mail address.");
+        return await this.confirmationemailmessagelocator.innerText();
     }
 
 
@@ -117,8 +115,6 @@ async accountregistrationrandom()
         await this.policycheckmethod();
         await this.continuebuttonmethod();
         await this.accountpageerrormethod();
-        await this.confirmationmessagemethod();
-        await this.confirmationemailmessagemethod();
     }
 
 async accountregistrationadmin()
@@ -134,8 +130,6 @@ async accountregistrationadmin()
         await this.policycheckmethod();
         await this.continuebuttonmethod();
         await this.accountpageerrormethod();
-        await this.confirmationmessagemethod();
-        await this.confirmationemailmessagemethod();
     }
 }
 

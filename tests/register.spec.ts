@@ -16,22 +16,21 @@ test.beforeEach("Test Url", async({page})=>
 })
 
 
-test("Account register method 1", async ({page})=>
+test("TC_RF_001", async ({page})=>
 {
         //homepage access
         await homepage.Myaccountlink();
         await homepage.Registerlink();
         await registerpage.accountregistrationrandom();
+        expect(await registerpage.confirmationmessagemethod()).toBe("Your Account Has Been Created!");
+        expect(await registerpage.confirmationemailmessagemethod()).toContain("A confirmation has been sent to the provided e-mail address.")
 })
-
 
 test.skip("Account register method 2", async ({page})=>
 {
         //homepage access
         await homepage.Myaccountlink();
         await homepage.Registerlink();
-
-     
         await registerpage.accountregistrationadmin();
 })
 
