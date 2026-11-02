@@ -17,7 +17,7 @@ export class Loginlogoutpage
     {
         this.page = page;
         this.loginemaillocator = page.getByPlaceholder('E-Mail Address');
-        this.loginpasswordlocator = page.getByPlaceholder('Password', { exact: true });
+        this.loginpasswordlocator = page.getByPlaceholder('Password', { exact: false});
         this.loginbuttonlocator = page.locator("//input[@value='Login']");
         this.logoutbuttonlocator = page.locator('a').filter({ hasText: 'Logout' }).first();
         this.myaccountlocator = page.locator('a').filter({ hasText: 'My Account' }).first()
