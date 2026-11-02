@@ -22,7 +22,7 @@ test.beforeEach("URL and class objects", async ({page})=>
 
 })
 
-test("login test",async({page})=>
+test("login test @sanity @regression",async({page})=>
 {
     //login page access
     await loginlogoutpage.loginmethod(Testconfig.email,Testconfig.password);
@@ -31,7 +31,7 @@ test("login test",async({page})=>
     console.log("login successful!");
 })
 
-test("logout test",async({page})=>
+test("logout test @sanity ",async({page})=>
 {
     //logout page
     await loginlogoutpage.logoutmethod();

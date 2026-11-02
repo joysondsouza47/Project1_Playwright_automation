@@ -16,7 +16,7 @@ test.beforeEach("Test Url", async({page})=>
 })
 
 
-test("TC_RF_001", async ({page})=>
+test("TC_RF_001 @regression", async ({page})=>
 {
         //homepage access
         await homepage.Myaccountlink();
