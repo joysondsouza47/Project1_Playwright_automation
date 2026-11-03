@@ -12,6 +12,7 @@ on:
         options:
             - test:sanity
             - test:regression
+            - test:api
         default: "test:e2e"
       browser:
         description: "Select browser"
