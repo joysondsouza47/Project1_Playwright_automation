@@ -1,20 +1,45 @@
 import { test, expect } from '@playwright/test';
 
-test('Validate GET API @api @e2e', async ({ request }) => {
+const loginURL =
+    'https://tutorialsninja.com/demo/index.php?route=account/login';
 
-    const response = await request.get(
-        'https://jsonplaceholder.typicode.com/posts/1'
-    );
+test('Login API - Valid credentials @api', async ({ request }) => {
+
+    const response = await request.post(loginURL, {
+        form: {
+            email: 'joysondsouza@gmail.com',
+            password: 'joyson1234'
+        },
+        maxRedirects: 0
+    });
+
+    console.log('Status:', response.status());
+    console.log('Location:', response.headers()['location']);
+
+    // Successful login should redirect to the account page
+    expect(response.status()).toBe(302);
+
+    expect(response.headers()['location']).toContain('route=account/account');
+});
+
+test('Login API - Invalid credentials @api', async ({ request }) => {
+
+    const response = await request.post(loginURL, {
+        form: {
+            email: 'invaliduser123@gmail.com',
+            password: 'WrongPassword123'
+        },
+        maxRedirects: 0
+    });
+
+    const responseBody = await response.text();
+
+    console.log('Status:', response.status());
+    console.log('Response:', responseBody);
 
     expect(response.status()).toBe(200);
 
-
-    console.log(response.status());
-    console.log(await response.json());
-    console.log(await response.text());
-    // console.log(response.headers());
-    console.log(response.ok());
-
-
+    expect(responseBody).toContain(
+        'Warning: No match for E-Mail Address and/or Password.'
+    );
 });
-//
