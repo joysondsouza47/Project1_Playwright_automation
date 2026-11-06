@@ -37,7 +37,7 @@ test('Login API - Invalid credentials @api', async ({ request }) => {
     console.log('Status:', response.status());
     console.log('Response:', responseBody);
 
-    expect(response.status()).toBe(200);
+    expect(response.status()).toBe(200); 
 
     expect(responseBody).toContain(
         'Warning: No match for E-Mail Address and/or Password.'
