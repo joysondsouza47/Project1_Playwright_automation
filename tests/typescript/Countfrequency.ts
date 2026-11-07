@@ -4,7 +4,7 @@
 
 function countFrequency()
 {
-    let name = "mynameisjoyson";
+    let name = "myname is joyson";
     let characters = "";
     let count = 0;
 
@@ -19,7 +19,7 @@ function countFrequency()
            }
            characters = characters + name[i];
     }
-
+console.log(characters)
 console.log("total number of repeated characters are : " + count)
 
 }
