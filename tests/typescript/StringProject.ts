@@ -112,3 +112,23 @@ function countCharaterFrequency(input:string)
 }
 
 countCharaterFrequency("programming")
+
+//duplicate characters
+
+function duplicateCharacters()
+{
+    let word = "programming";
+    let duplicates:string[] = [];
+
+
+    for(let i = 0; i< word.length; i++)
+    {
+        if(word.indexOf(word[i]) !== word.lastIndexOf(word[i]) && !duplicates.includes(word[i]))
+        {
+            duplicates.push(word[i]);
+        }
+    }
+    console.log("duplicate of charactersin string is : " +duplicates)
+}
+
+duplicateCharacters();
