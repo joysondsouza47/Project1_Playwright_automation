@@ -132,4 +132,3 @@ function duplicateCharacters()
 }
 
 duplicateCharacters();
-//
