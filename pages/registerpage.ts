@@ -121,7 +121,7 @@ async accountregistrationadmin()
     {
         await this.firstnamemethod(Testconfig.firstname);
         await this.lastnamemethod(Testconfig.lastname);
-        await this.emailmethod(Testconfig.email);
+        await this.emailmethod(Testconfig.email1);
         await this.telephonemethod(Testconfig.telephone);
         let password = Randomdatagenerator.getRandomPassword();
         await this.passwordmethod(password);

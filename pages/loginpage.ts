@@ -38,7 +38,7 @@ export class Loginlogoutpage
 
     async logoutmethod()
     {
-        await this.loginmethod(Testconfig.email,Testconfig.password);
+        await this.loginmethod(Testconfig.email1,Testconfig.password);
         if(await this.Loginpagetitlemethod() === "My Account")
         {
             await this.myaccountlocator.click();

@@ -25,7 +25,7 @@ test.beforeEach("URL and class objects", async ({page})=>
 test("login test @sanity @regression @e2e",async({page})=>
 {
     //login page access
-    await loginlogoutpage.loginmethod(Testconfig.email,Testconfig.password);
+    await loginlogoutpage.loginmethod(Testconfig.email1,Testconfig.password);
     //login check
     expect(await loginlogoutpage.Loginpagetitlemethod()).toBe(loginpagetitle)
     console.log("login successful!");
