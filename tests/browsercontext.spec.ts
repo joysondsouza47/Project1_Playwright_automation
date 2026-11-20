@@ -5,7 +5,7 @@ import { Homepage } from "../pages/homepage.ts";
 import 'dotenv/config';
 
 
-test("admin and user login",async({browser})=>
+test("admin and user login @e2e",async({browser})=>
 {
 
     const email1 = process.env.USER_EMAIL1;
