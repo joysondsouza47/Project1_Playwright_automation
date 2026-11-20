@@ -48,9 +48,6 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Create .env File
-      run: Copy-Item .env.example .env
-
     - name: 🧪 Run Playwright Tests
       run: |
           $suite = "${{ github.event.inputs.test_suite || 'test:e2e' }}"
@@ -62,6 +59,9 @@ jobs:
           npx playwright test --grep "@$tag" $browserFlag $modeFlag --output=test-results
       env:
         CI: "1"
+        USER_EMAIL1: ${{ secrets.USER_EMAIL1 }}
+        USER_EMAIL2: ${{ secrets.USER_EMAIL2 }}
+        USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
 
     - name: 📊 Upload Playwright HTML Report
       if: always()
